@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LinkedIn Follow Button</title>
+  </head>
+  <body>
+    <!-- <button id="follow-button">Follow Company</button> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <div
+      class="LI-profile-badge"
+      data-version="v1"
+      data-size="medium"
+      data-locale="en_US"
+      data-type="horizontal"
+      data-theme="light"
+      data-vanity="follow-button"
+    >
+      <a
+        class="LI-simple-link"
+        href="https://www.linkedin.com/company/nestle-s-a-"
+        >Follow Button</a
+      >
+    </div>
+
+    <script>
+      window.onload = async function () {
+        console.log("On load event trigger");
+
+        await axios
+
+          .get("http://localhost:3000/api/follow-company")
+          .then((response) => {
+            console.log("GET request successful");
+            console.log(response.data); // Handle the response from the server
+          })
+          .catch((error) => {
+            console.error("GET request failed:", error);
+          });
+      };
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>LinkedIn Follow Button</title>
+</head>
+<body>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="follow-button">
+    <a class="LI-simple-link" href='https://www.linkedin.com/company/nestle-s-a-'>Follow Button</a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    // Function to send a GET request to your local server
+    function followCompany() {
+      axios
+        .get("http://localhost:3000/api/follow-company")
+        .then((response) => {
+          console.log("GET request successful");
+          console.log(response.data); // Handle the response from the server
+        })
+        .catch((error) => {
+          console.error("GET request failed:", error);
+        });
+    }
+
+    // Delayed execution of the LinkedIn follow button click
+    function automateClick() {
+      const button = document.querySelector('.LI-simple-link');
+      if (button) {
+        button.click();
+      } else {
+        console.log("LinkedIn follow button not found.");
+      }
+    }
+
+    // Wait for a brief moment (e.g., 2 seconds) before attempting the click
+    
+      automateClick();
+      followCompany(); // Call the function to send the GET request
+    // Adjust the delay as needed
+  </script>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>LinkedIn Follow Button</title>
+  </head>
+  <body>
+    
+    <button id="follow-button">Follow Company</button>
+
+    
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
+
+    <script>
+      // Function to send a GET request to your local server
+      function followCompany() {
+        // Send a GET request to your local server's API route
+        axios
+          .get("http://localhost:3000/api/follow-company")
+          .then((response) => {
+            console.log("GET request successful");
+            console.log(response.data); // Handle the response from the server
+          })
+          .catch((error) => {
+            console.error("GET request failed:", error);
+          });
+      }
+
+      // Add click handler to the "Follow Company" button
+      const followButton = document.getElementById("follow-button");
+      followButton.addEventListener("click", followCompany);
+    </script>
+  </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>LinkedIn Follow Button</title>
+</head>
+<body>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="follow-button">
+    <a class="LI-simple-link" href='https://www.linkedin.com/company/googler/18716668'>Follow Button</a>
+  </div>
+  <script>
+    // Automate clicking the LinkedIn follow button
+    window.addEventListener('load', function() {
+      const button = document.querySelector('.LI-simple-link');
+      if (button) {
+        button.click();
+      } else {
+        console.log("LinkedIn follow button not found.");
+      }
+    });
+    
+  </script>
+</body>
+</html>
+////////////////////
+
+ -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>LinkedIn Follow Button</title>
+</head>
+<body>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+  <div class="LI-profile-badge" data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="follow-button">
+    <a class="LI-simple-link" href='https://www.linkedin.com/company/nestle-s-a-'>Follow Button</a>
+  </div>
+  <script>
+    // Function to automate clicking the LinkedIn follow button
+    function automateLinkedInFollow() {
+      const button = document.querySelector('.LI-simple-link');
+      if (button) {
+        button.click(".follow");
+      } else {
+        console.log("LinkedIn follow button not found.");
+      }
+    }
+
+    // Automatically click the button when the page loads
+    window.addEventListener('load', automateLinkedInFollow);
+  </script>
+</body>
+</html>
+ -->
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>LinkedIn Follow Button</title>
+</head>
+<body>
+  
+  <button id="follow-button">Follow Company</button>
+
+  <script>
+    // Function to send a request to the API when the button is clicked
+    function followCompany() {
+      fetch("/api/follow-company")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.message); // Handle the API response as needed
+        })
+        .catch((error) => {
+          console.error("An error occurred:", error);
+        });
+    }
+
+    // Add click handler to button
+    const followButton = document.getElementById("follow-button");
+    followButton.addEventListener("click", followCompany);
+  </script>
+</body>
+</html> -->
